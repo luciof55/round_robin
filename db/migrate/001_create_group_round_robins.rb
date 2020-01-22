@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Round Robin.  If not, see <http://www.gnu.org/licenses/>.
 
-class CreateGroupRoundRobins < ActiveRecord::Migration
+class CreateGroupRoundRobins < Rails.version < '5.1' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
   def change
     create_table :group_round_robins do |t|
     	t.integer :group_id, :null => false
